@@ -27,14 +27,39 @@ export default {
 
 <template>
   <div id="app">
-    
+    <Todos3 v-bind:todos2="todos1" />
   </div>
 </template>
 
 <script>
+import Todos3 from "./components/Todos";
+
 export default {
   name: "App",
-  components: {},
+  components: {
+    Todos3,
+  },
+  data() {
+    return {
+      todos1: [
+        {
+          id: 1,
+          title: "Todo one",
+          completed: false,
+        },
+        {
+          id: 2,
+          title: "Todo two",
+          completed: true,
+        },
+        {
+          id: 3,
+          title: "Todo three",
+          completed: false,
+        },
+      ],
+    };
+  },
 };
 </script>
 
